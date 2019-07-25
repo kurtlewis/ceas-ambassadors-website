@@ -20,6 +20,8 @@ block content
         div Minor in #{member.minors}
       if member.accend
         div Accend Student
+      if user && member.email
+        div #{user.email}
   //- throw some space in there
   div(style="padding-top:2%;")
   if member.clubs

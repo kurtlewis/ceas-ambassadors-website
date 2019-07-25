@@ -25,7 +25,7 @@ block content
     //- throw some space in there
     div(style="padding-top:2%;")
     //- show sign up if it's an event and they're logged in, or if its a meeting and they're a super user
-    if user && (!event.meeting || user.super_user)
+    if user && !event.meeting
       form(id='signUp', action='/event/' + event.id + '/signup' , method='post')
         input(type='hidden', name='_csrf', value=csrfToken)
         input.submit-small(type='submit', name='Sign Up', value='Sign Up For This Event')
